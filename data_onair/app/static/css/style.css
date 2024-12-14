@@ -1,0 +1,20 @@
+#style.css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.icon {
+    margin-right: 50px;
+}
+.content {
+    margin-left: 60px;
+    padding: 20px;
+}
+.warning-box {
+    border: 2px solid red;
+    padding: 15px;
+    background-color: rgba(255, 0, 0, 0.1);
+    border-radius: 5px;
+}

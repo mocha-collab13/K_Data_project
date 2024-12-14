@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/project.css' %}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">s
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <title>전세사기 검사하기</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <style>
+  *{
+    font-family: 'Gowun Dodum', sans-serif;    }
+</style>
+</head>
+
+<body>
+  <div class="bg-wrapper">
+    <div class="bg-container container-fluid">
+      <div class="bg-static"></div>
+      <div class="bg-static bg-move"></div>
+      <div class="title-content">
+        <h1>전세사기 이상감지<br>분석리포트</h1>
+        <p>
+          <button id="title-button" class="btn">검사하기</button>
+        </p>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <main class="container content">
+        <!-- <form method="POST" action="{% url 'success_upload' %}"> -->
+        <form method="POST" enctype="multipart/form-data" > 
+          {% csrf_token %}
+          <div class="mb-3">
+            <label class="form-label">아파트명을 입력해주세요</label>
+            <p></p>
+            <div class="input-group">
+              <span class="input-group-text">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                  viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <path
+                    d="M0 48C0 21.5 21.5 0 48 0H336c26.5 0 48 21.5 48 48V207l-42.4 17H304 272c-8.8 0-16 7.2-16 16v32 24.2V304c0 .9 .1 1.7 .2 2.6c2.3 58.1 24.1 144.8 98.7 201.5c-5.8 2.5-12.2 3.9-18.9 3.9H240V432c0-26.5-21.5-48-48-48s-48 21.5-48 48v80H48c-26.5 0-48-21.5-48-48V48zM80 224c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H80zm80 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V240c0-8.8-7.2-16-16-16H176c-8.8 0-16 7.2-16 16zM64 112v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zM176 96c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H176zm80 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16V112c0-8.8-7.2-16-16-16H272c-8.8 0-16 7.2-16 16zM423.1 225.7c5.7-2.3 12.1-2.3 17.8 0l120 48C570 277.4 576 286.2 576 296c0 63.3-25.9 168.8-134.8 214.2c-5.9 2.5-12.6 2.5-18.5 0C313.9 464.8 288 359.3 288 296c0-9.8 6-18.6 15.1-22.3l120-48zM527.4 312L432 273.8V461.7c68.2-33 91.5-99 95.4-149.7z" />
+                </svg>
+              </span>
+              <input name="apt_name" type="text" class="form-control" placeholder="아파트명">
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="mb-3">
+            <label class="form-label">등기부등본 업로드</label>
+            <p></p>
+            <div class="input-group">
+              <input name="docfile" type="file" class="form-control" accept="application/pdf, image/*" placeholder="파일 선택" />
+            </div>
+          </div>
+
+          <hr>
+
+          <p class="text-center">
+            <button class="btn btn-primary col-5 d-inline-block" type="submit">제출</button>
+          </p>
+        </form>
+      </main>
+      <footer>
+        <div class="footer-content"></div>
+        <p>
+          © 데청캠 2분반 4조
+          <br>
+          <br>
+          by
+          <a href="mailto:kosukhun0@gmail.com"><i>고석훈</i></a>
+          and
+          <a href="mailto:qewqwer124@gmail.com"><i>김도윤</i></a>
+          and
+          <a href="mailto:seoyoung01045@naver.com"><i>김서영</i></a>
+          and
+          <a href="mailto:songsoohyun4781@gmail.com"><i>송수현</i></a>
+          and
+          <a href="mailto:awnstjr07@gmail.com"><i>양준석</i></a>
+          and
+          <a href="mailto:shstarsh21@gmail.com"><i>이수현</i></a>
+          and
+          <a href="mailto:xoxo0675@gmail.com"><i>주현지</i></a>
+          <br>
+          <br>
+          Proudly created with Vanilla HTML5, CSS, Javascript.
+        </p>
+      </footer>
+    </div>
+  </div>
+  <script src="{% static 'js/home.js' %}"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
