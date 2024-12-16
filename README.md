@@ -78,8 +78,8 @@ EDA를 통해 변수들의 특성을 대략적으로 살펴보았다.
 
 -> 그 결과 imbalanced data & insufficient data 문제를 발견하였다.
 
-위 문제를 해결하기 위해 오버샘플링을 진행하였다. 이에 **SMOTE** 알고리즘을 사용하였고, 오버샘플링 자체가 갖고 있는 과적합을 완전히 피할 순 없었다.
-
 ![데이터 가공_3](https://i.esdrop.com/d/f/roqIf5Zmhy/X0LZ9Llciy.png)
 
 ![데이터 가공_4](https://i.esdrop.com/d/f/roqIf5Zmhy/7Z4JXELRt6.png)
+
+위 문제를 해결하기 위해 오버샘플링을 진행하였다. 이에 **SMOTE** 알고리즘을 사용하였고, 오버샘플링 자체가 갖고 있는 과적합을 완전히 피할 순 없었다.
